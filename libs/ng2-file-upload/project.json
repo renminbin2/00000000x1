@@ -11,8 +11,7 @@
       ],
       "options": {
         "tsConfig": "libs/ng2-file-upload/tsconfig.lib.json",
-        "project": "libs/ng2-file-upload/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/ng2-file-upload/ng-package.json"
       },
       "configurations": {
         "production": {
