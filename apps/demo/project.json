@@ -3,6 +3,10 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/demo/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": [
+    "ng2-file-upload"
+  ],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -63,18 +67,9 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/demo/**/*.ts"
-        ]
-      },
       "outputs": [
         "{options.outputFile}"
       ]
     }
-  },
-  "tags": [],
-  "implicitDependencies": [
-    "ng2-file-upload"
-  ]
+  }
 }
