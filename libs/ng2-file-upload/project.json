@@ -3,6 +3,9 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ng2-file-upload/",
   "projectType": "library",
+  "tags": [
+    "lib"
+  ],
   "targets": {
     "build": {
       "executor": "@nx/angular:package",
@@ -21,11 +24,6 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/ng2-file-upload/**/*.ts"
-        ]
-      },
       "outputs": [
         "{options.outputFile}"
       ]
@@ -54,8 +52,5 @@
         "production": {}
       }
     }
-  },
-  "tags": [
-    "lib"
-  ]
+  }
 }

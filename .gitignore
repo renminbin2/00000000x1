@@ -39,3 +39,4 @@ scripts/**/*.js
 scripts/**/*.map
 
 .nx/cache
+.yarn
