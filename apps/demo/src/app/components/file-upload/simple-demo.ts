@@ -21,7 +21,7 @@ export class SimpleDemoComponent {
       disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
       formatDataFunctionIsAsync: true,
       formatDataFunction: async item => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, ) => {
           resolve({
             name: item._file.name,
             length: item._file.size,
