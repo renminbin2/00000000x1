@@ -344,7 +344,7 @@ export class FileUploader {
     };
     xhr.onload = () => {
       const headers = this._parseHeaders(xhr.getAllResponseHeaders());
-      const response = this._transformResponse(xhr.response, headers);
+      const response = this._transformResponse(xhr.response);
       const gist = this._isSuccessCode(xhr.status) ? 'Success' : 'Error';
       const method = `_on${gist}Item`;
       (this as any)[ method ](item, response, xhr.status, headers);
@@ -352,13 +352,13 @@ export class FileUploader {
     };
     xhr.onerror = () => {
       const headers = this._parseHeaders(xhr.getAllResponseHeaders());
-      const response = this._transformResponse(xhr.response, headers);
+      const response = this._transformResponse(xhr.response);
       this._onErrorItem(item, response, xhr.status, headers);
       this._onCompleteItem(item, response, xhr.status, headers);
     };
     xhr.onabort = () => {
       const headers = this._parseHeaders(xhr.getAllResponseHeaders());
-      const response = this._transformResponse(xhr.response, headers);
+      const response = this._transformResponse(xhr.response);
       this._onCancelItem(item, response, xhr.status, headers);
       this._onCompleteItem(item, response, xhr.status, headers);
     };
@@ -446,7 +446,7 @@ export class FileUploader {
     return (status >= 200 && status < 300) || status === 304;
   }
 
-  protected _transformResponse(response: string, headers: ParsedResponseHeaders): string {
+  protected _transformResponse(response: string): string {
     return response;
   }
 

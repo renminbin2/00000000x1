@@ -8,13 +8,6 @@
   ],
   "overrides": [
     {
-      "files": ["*.json"],
-      "parser": "jsonc-eslint-parser",
-      "rules": {
-        "@nx/dependency-checks": "error"
-      }
-    },
-    {
       "files": [
         "*.ts",
         "*.tsx",
@@ -52,12 +45,11 @@
       },
       "rules": {
         "semi": "off",
+        "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/semi": [
           "error"
         ],
-        "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
+        "@typescript-eslint/ban-ts-comment": "off"
       }
     },
     {
@@ -68,9 +60,13 @@
       "extends": [
         "plugin:@nx/javascript"
       ],
+      "rules": {}
+    },
+    {
+      "files": ["*.json"],
+      "parser": "jsonc-eslint-parser",
       "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
+        "@nx/dependency-checks": "error"
       }
     }
   ]
