@@ -67,6 +67,11 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/demo/**/*.ts"
+        ]
+      },
       "outputs": [
         "{options.outputFile}"
       ]
